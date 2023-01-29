@@ -21,6 +21,8 @@ dotenv.read_dotenv()
 BASE_DIR = Path(__file__).resolve().parent.parent
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
@@ -97,11 +99,11 @@ WSGI_APPLICATION = "bulkmailer.wsgi.application"
 DATABASES = {
     'default': {
        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-       'NAME': os.environ.get('DB_NAME'),
-       'USER': os.environ.get('DB_USER'),
-       'PASSWORD': os.environ.get('DB_PASS'),
-       'HOST': os.environ.get('DB_HOST'),
-       'PORT': '7195'
+       'NAME': os.environ.get('DBNAMEL'),
+       'USER': os.environ.get('DBUSERL'),
+       'PASSWORD': os.environ.get('DBPASSL'),
+       'HOST': os.environ.get('DBHOSTL'),
+       'PORT': '5432'
    }
 }
 
@@ -176,8 +178,8 @@ CSRF_TRUSTED_ORIGINS = [
 ]
 
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=10),
-    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+    'ACCESS_TOKEN_LIFETIME': timedelta(days=1),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=30),
     'ROTATE_REFRESH_TOKENS': True,
     'BLACKLIST_AFTER_ROTATION': False,
     'UPDATE_LAST_LOGIN': False,
