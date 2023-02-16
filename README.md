@@ -45,7 +45,7 @@ pip install -r requirements.txt
 ```
 
 
-4. Setup .env file in cryptBEE/cryptBEE and navigate back to base directory cryptBEE/
+4. Setup .env file in Bulk-Mailer-Backend/bulkmailer
 
 ```
 EMAIL_HOST_USER = ''
